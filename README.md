@@ -1,2 +1,4 @@
-# mobilidade-urbana
-Uma aplicação que visa ajudar os habitantes de Cataguases com relação aos horários de ônibus desenvolvida pelos membros do GDG em Dojos..
+# Cataguases - Mobilidade Urbana
+Esta é uma aplicação que visa informar os horários dos transportes publicos aos moradores de Cataguases.
+
+Iremos desenvolver está aplicação em Dojos realizados pelo GDG.
