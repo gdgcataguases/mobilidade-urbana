@@ -36,9 +36,17 @@ class _HomePageState extends State<HomePage> {
                 child: SizedBox(
                   height: 300,
                   width: MediaQuery.of(context).size.width,
-                  child: Text(
-                    'KTAMOBI',
-                    style: TextStyle(color: Colors.blue),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(50, 30, 50, 20),
+                    child: Center(
+                      child: Text(
+                        'KTAMOBI',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
                   ),
                 ),
               ),
