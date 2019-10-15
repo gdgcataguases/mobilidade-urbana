@@ -23,6 +23,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+ 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,6 +45,8 @@ class _HomePageState extends State<HomePage> {
 }
 
 class SearchBar extends StatelessWidget {
+  
+
   const SearchBar({
     Key key,
   }) : super(key: key);
@@ -50,37 +54,39 @@ class SearchBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Container(
-        color: Colors.red,
-        child: Column(
-          children: <Widget>[
-            Row(
+      child: Column(
+        children: <Widget>[
+          Container(
+            color: Colors.red,
+            child: Column(
               children: <Widget>[
-                getTop(context),
+                Row(
+                  children: <Widget>[
+                    getTop(context),
+                  ],
+                ),
               ],
             ),
-            Row(
-              children: <Widget>[
-                // ListView(
-                //   children: <Widget>[
-                //     ListTile(
-                //       leading: Icon(Icons.map),
-                //       title: Text('Mapa'),
-                //     ),
-                //     ListTile(
-                //       leading: Icon(Icons.photo_album),
-                //       title: Text('Album'),
-                //     ),
-                //     ListTile(
-                //       leading: Icon(Icons.phone),
-                //       title: Text('Fone'),
-                //     ),
-                //   ],
-                // ),
-              ],
-            ),
-          ],
-        ),
+          ),
+          Row(
+            children: <Widget>[
+             Expanded(
+              child: ListView.builder(
+                shrinkWrap: true,
+                itemCount: rotas.length,
+                itemBuilder: (context, index) {
+                  return ListTile(
+                      title: Text(
+                      '${rotas[index]}',
+                      style: TextStyle(fontSize: 22),
+                    ),
+                    trailing: Icon(Icons.directions_bus),
+                  );
+                },
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
