@@ -61,22 +61,22 @@ class SearchBar extends StatelessWidget {
             ),
             Row(
               children: <Widget>[
-                ListView(
-                  children: <Widget>[
-                    ListTile(
-                      leading: Icon(Icons.map),
-                      title: Text('Mapa'),
-                    ),
-                    ListTile(
-                      leading: Icon(Icons.photo_album),
-                      title: Text('Album'),
-                    ),
-                    ListTile(
-                      leading: Icon(Icons.phone),
-                      title: Text('Fone'),
-                    ),
-                  ],
-                ),
+                // ListView(
+                //   children: <Widget>[
+                //     ListTile(
+                //       leading: Icon(Icons.map),
+                //       title: Text('Mapa'),
+                //     ),
+                //     ListTile(
+                //       leading: Icon(Icons.photo_album),
+                //       title: Text('Album'),
+                //     ),
+                //     ListTile(
+                //       leading: Icon(Icons.phone),
+                //       title: Text('Fone'),
+                //     ),
+                //   ],
+                // ),
               ],
             ),
           ],
@@ -108,10 +108,11 @@ class SearchBar extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.all(20),
                     child: TextField(
-                        style: TextStyle(color: Colors.white),
+                        style: TextStyle(color: Colors.black),
                         decoration: InputDecoration(
-                            labelText: "Pesquise aqui",
-                            labelStyle: TextStyle(color: Colors.white),
+                            hintText: 'Informe o bairro',
+                            filled: true,
+                            fillColor: Colors.white,
                             border: OutlineInputBorder(),
                             enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(color: Colors.white)))),
