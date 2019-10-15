@@ -64,11 +64,14 @@ class SearchBar extends StatelessWidget {
                     'KTAMOBI',
                     style: TextStyle(
                         color: Colors.white,
-                        fontSize: 30,
+                        fontSize: 60,
                         fontWeight: FontWeight.bold),
                   ),
                 ),
-                TextFormField
+                TextFormField(
+                  style: TextStyle(color: Colors.white, fontSize: 22),
+                  decoration: InputDecoration(),
+                )
               ],
             ),
           ),
