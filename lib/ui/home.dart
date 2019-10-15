@@ -29,29 +29,44 @@ class _HomePageState extends State<HomePage> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            SafeArea(
-              child: Container(
-                color: Colors.red,
-                child: SizedBox(
-                  height: 300,
-                  width: MediaQuery.of(context).size.width,
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(50, 30, 50, 20),
-                    child: Center(
-                      child: Text(
-                        'KTAMOBI',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 30,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                  ),
-                ),
+          children: searchbar(context),
+        ),
+      ),
+    );
+  }
+
+  List<Widget> searchbar(BuildContext context) {
+    return <Widget>[
+      new SearchBar(),
+    ];
+  }
+}
+
+class SearchBar extends StatelessWidget {
+  const SearchBar({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: Container(
+        color: Colors.red,
+        child: SizedBox(
+          height: 300,
+          width: MediaQuery.of(context).size.width,
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(50, 30, 50, 20),
+            child: Center(
+              child: Text(
+                'KTAMOBI',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold),
               ),
             ),
-          ],
+          ),
         ),
       ),
     );
