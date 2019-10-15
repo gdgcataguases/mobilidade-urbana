@@ -52,7 +52,35 @@ class SearchBar extends StatelessWidget {
     return SafeArea(
       child: Container(
         color: Colors.red,
-        child: getTop(context),
+        child: Column(
+          children: <Widget>[
+            Row(
+              children: <Widget>[
+                getTop(context),
+              ],
+            ),
+            Row(
+              children: <Widget>[
+                ListView(
+                  children: <Widget>[
+                    ListTile(
+                      leading: Icon(Icons.map),
+                      title: Text('Mapa'),
+                    ),
+                    ListTile(
+                      leading: Icon(Icons.photo_album),
+                      title: Text('Album'),
+                    ),
+                    ListTile(
+                      leading: Icon(Icons.phone),
+                      title: Text('Fone'),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
