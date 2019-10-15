@@ -30,9 +30,18 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            Text(
-              'KTAMOBI',
-              style: TextStyle(color: Colors.blue),
+            SafeArea(
+              child: Container(
+                color: Colors.red,
+                child: SizedBox(
+                  height: 300,
+                  width: MediaQuery.of(context).size.width,
+                  child: Text(
+                    'KTAMOBI',
+                    style: TextStyle(color: Colors.blue),
+                  ),
+                ),
+              ),
             ),
           ],
         ),
