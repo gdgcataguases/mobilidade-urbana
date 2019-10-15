@@ -68,10 +68,12 @@ class SearchBar extends StatelessWidget {
                         fontWeight: FontWeight.bold),
                   ),
                 ),
-                TextFormField(
-                  style: TextStyle(color: Colors.white, fontSize: 22),
-                  decoration: InputDecoration(),
-                )
+                TextField(
+                    decoration: InputDecoration(
+                  labelText: "Pesquise aqui",
+                  labelStyle: TextStyle(color: Colors.white),
+                  border: OutlineInputBorder(),
+                ))
               ],
             ),
           ),
