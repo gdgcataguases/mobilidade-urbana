@@ -69,11 +69,13 @@ class SearchBar extends StatelessWidget {
                   ),
                 ),
                 TextField(
+                    style: TextStyle(color: Colors.white),
                     decoration: InputDecoration(
-                  labelText: "Pesquise aqui",
-                  labelStyle: TextStyle(color: Colors.white),
-                  border: OutlineInputBorder(),
-                ))
+                        labelText: "Pesquise aqui",
+                        labelStyle: TextStyle(color: Colors.white),
+                        border: OutlineInputBorder(),
+                        enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.white))))
               ],
             ),
           ),
