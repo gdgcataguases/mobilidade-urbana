@@ -23,8 +23,30 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final List<String> rotas = [
+    "Ana Carrara X Menezes",
+    "Ana Carrara X Taquara Preta",
+    "Ana Carrara X Cháraca Paraíso",
+    "Bom Pastor x Guanabara",
+    "Carijós x Canoa",
+    "Chácara Paraíso x Justino",
+    "Colinas x Taquara Preta",
+    "Ana Carrara X Menezes",
+    "Ana Carrara X Taquara Preta",
+    "Ana Carrara X Cháraca Paraíso",
+    "Bom Pastor x Guanabara",
+    "Carijós x Canoa",
+    "Chácara Paraíso x Justino",
+    "Colinas x Taquara Preta",
+    "Ana Carrara X Menezes",
+    "Ana Carrara X Taquara Preta",
+    "Ana Carrara X Cháraca Paraíso",
+    "Bom Pastor x Guanabara",
+    "Carijós x Canoa",
+    "Chácara Paraíso x Justino",
+    "Colinas x Taquara Preta",
+  ];
 
- 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,16 +61,17 @@ class _HomePageState extends State<HomePage> {
 
   List<Widget> searchbar(BuildContext context) {
     return <Widget>[
-      new SearchBar(),
+      new SearchBar(rotas: rotas),
     ];
   }
 }
 
 class SearchBar extends StatelessWidget {
-  
+  final List<String> rotas;
 
   const SearchBar({
     Key key,
+    this.rotas,
   }) : super(key: key);
 
   @override
@@ -70,20 +93,20 @@ class SearchBar extends StatelessWidget {
           ),
           Row(
             children: <Widget>[
-             Expanded(
-              child: ListView.builder(
+              Expanded(
+                  child: ListView.builder(
                 shrinkWrap: true,
                 itemCount: rotas.length,
                 itemBuilder: (context, index) {
                   return ListTile(
-                      title: Text(
+                    title: Text(
                       '${rotas[index]}',
                       style: TextStyle(fontSize: 22),
                     ),
                     trailing: Icon(Icons.directions_bus),
                   );
                 },
-              ),
+              )),
             ],
           ),
         ],
