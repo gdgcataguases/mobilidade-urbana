@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobilidade_urbana/ui/rotas.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -94,6 +95,10 @@ class ListaLinhas extends StatelessWidget {
       itemBuilder: (context, index) {
         return ListTile(
           title: Text(rotas[index]),
+          onTap: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => RotasPage()));
+          },
         );
       },
     ));
