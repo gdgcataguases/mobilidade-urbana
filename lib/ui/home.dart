@@ -24,30 +24,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final List<String> rotas = [
-    "Ana Carrara X Menezes",
-    "Ana Carrara X Taquara Preta",
-    "Ana Carrara X Cháraca Paraíso",
-    "Bom Pastor x Guanabara",
-    "Carijós x Canoa",
-    "Chácara Paraíso x Justino",
-    "Colinas x Taquara Preta",
-    "Ana Carrara X Menezes",
-    "Ana Carrara X Taquara Preta",
-    "Ana Carrara X Cháraca Paraíso",
-    "Bom Pastor x Guanabara",
-    "Carijós x Canoa",
-    "Chácara Paraíso x Justino",
-    "Colinas x Taquara Preta",
-    "Ana Carrara X Menezes",
-    "Ana Carrara X Taquara Preta",
-    "Ana Carrara X Cháraca Paraíso",
-    "Bom Pastor x Guanabara",
-    "Carijós x Canoa",
-    "Chácara Paraíso x Justino",
-    "Colinas x Taquara Preta",
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

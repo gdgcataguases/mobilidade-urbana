@@ -1,36 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:mobilidade_urbana/ui/rotas.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
+  @override
+  _HomeState createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primaryColor: Colors.white,
+      home: Scaffold(
+        body: ListaBairros(),
       ),
-      home: HomePage(title: ''),
     );
   }
 }
 
-class HomePage extends StatefulWidget {
-  HomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  _HomePageState createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  @override
-  void initState() {
-    SystemChrome.setEnabledSystemUIOverlays([]);
-    super.initState();
-  }
-
+class ListaBairros extends StatelessWidget {
   final List<String> rotas = [
     "Ana Carrara X Menezes",
     "Ana Carrara X Taquara Preta",
@@ -57,113 +43,54 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: searchbar(context),
-        ),
-      ),
+    return ListView.builder(
+      itemCount: rotas.length,
+      itemBuilder: (context, index) {
+        return ListTile(
+          title: Text(rotas[index]),
+        );
+      },
     );
-  }
-
-  List<Widget> searchbar(BuildContext context) {
-    return <Widget>[
-      new SearchBar(rotas: rotas),
-    ];
   }
 }
 
-class SearchBar extends StatelessWidget {
-  final List<String> rotas;
-
-  const SearchBar({
-    Key key,
-    this.rotas,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return SafeArea(
-      child: Column(
+SizedBox getTop(BuildContext context) {
+  return SizedBox(
+    height: 240,
+    width: MediaQuery.of(context).size.width,
+    child: Padding(
+      padding: const EdgeInsets.fromLTRB(50, 30, 50, 20),
+      child: Row(
         children: <Widget>[
-          Container(
-            color: Colors.red,
+          Expanded(
             child: Column(
               children: <Widget>[
-                Row(
-                  children: <Widget>[
-                    getTop(context),
-                  ],
+                Center(
+                  child: Text(
+                    'KTAMOBI',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 60,
+                        fontWeight: FontWeight.bold),
+                  ),
                 ),
+                Padding(
+                  padding: const EdgeInsets.all(20),
+                  child: TextField(
+                      style: TextStyle(color: Colors.black),
+                      decoration: InputDecoration(
+                          hintText: 'Informe o bairro',
+                          filled: true,
+                          fillColor: Colors.white,
+                          border: OutlineInputBorder(),
+                          enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.white)))),
+                )
               ],
             ),
           ),
-          Row(
-            children: <Widget>[
-              Expanded(
-                  child: ListView.builder(
-                shrinkWrap: true,
-                itemCount: rotas.length,
-                itemBuilder: (context, index) {
-                  return ListTile(
-                    title: Text(
-                      '${rotas[index]}',
-                      style: TextStyle(fontSize: 22),
-                    ),
-                    trailing: Icon(Icons.directions_bus),
-                    onTap: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => RotasPage()));
-                    },
-                  );
-                },
-              )),
-            ],
-          ),
         ],
       ),
-    );
-  }
-
-  SizedBox getTop(BuildContext context) {
-    return SizedBox(
-      height: 240,
-      width: MediaQuery.of(context).size.width,
-      child: Padding(
-        padding: const EdgeInsets.fromLTRB(50, 30, 50, 20),
-        child: Row(
-          children: <Widget>[
-            Expanded(
-              child: Column(
-                children: <Widget>[
-                  Center(
-                    child: Text(
-                      'KTAMOBI',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 60,
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(20),
-                    child: TextField(
-                        style: TextStyle(color: Colors.black),
-                        decoration: InputDecoration(
-                            hintText: 'Informe o bairro',
-                            filled: true,
-                            fillColor: Colors.white,
-                            border: OutlineInputBorder(),
-                            enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.white)))),
-                  )
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
+    ),
+  );
 }
