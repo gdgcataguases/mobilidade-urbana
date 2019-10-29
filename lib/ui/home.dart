@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobilidade_urbana/ui/rotas.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -104,6 +105,10 @@ class SearchBar extends StatelessWidget {
                       style: TextStyle(fontSize: 22),
                     ),
                     trailing: Icon(Icons.directions_bus),
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => RotasPage()));
+                    },
                   );
                 },
               )),
