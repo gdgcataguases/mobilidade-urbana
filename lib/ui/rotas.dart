@@ -6,6 +6,10 @@ final List<String> _horarios = [
 ];
 
 class RotasPage extends StatelessWidget {
+  String dados;
+
+  // RotasPage({dados});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -18,7 +22,7 @@ class RotasPage extends StatelessWidget {
               bottom: TabBar(
                 tabs: [
                   Tab(
-                    text: 'Saida Origem',
+                    text: 'Saida Destino',
                   ),
                   Tab(
                     text: 'Saida Destino',
@@ -27,11 +31,21 @@ class RotasPage extends StatelessWidget {
               )),
           body: TabBarView(
             children: [
-              Tab(
-                text: 'TExt 1',
+              ListView.builder(
+                itemCount: _horarios.length,
+                itemBuilder: (context, index) {
+                  return ListTile(
+                    title: Text(_horarios[index]),
+                  );
+                },
               ),
-              Tab(
-                text: 'TEXT 2',
+              ListView.builder(
+                itemCount: _horarios.length,
+                itemBuilder: (context, index) {
+                  return ListTile(
+                    title: Text(_horarios[index]),
+                  );
+                },
               )
             ],
           ),
