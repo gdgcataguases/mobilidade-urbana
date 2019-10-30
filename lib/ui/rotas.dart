@@ -12,30 +12,23 @@ class RotasPage extends StatelessWidget {
       child: DefaultTabController(
         length: 2,
         child: Scaffold(
-          backgroundColor: Colors.red,
-          appBar: TabBar(
-            tabs: <Widget>[
-              Tab(
-                text: 'Saida',
-              ),
-              Tab(
-                text: 'Saida',
-              )
-            ],
-          ),
+          appBar: AppBar(
+              backgroundColor: Colors.red,
+              title: Text('Horários'),
+              bottom: TabBar(
+                tabs: [
+                  Tab(
+                    text: 'Saida Origem',
+                  ),
+                  Tab(
+                    text: 'Saida Destino',
+                  )
+                ],
+              )),
           body: TabBarView(
-            children: <Widget>[
+            children: [
               Tab(
-                text: Expanded(
-        child: ListView.builder(
-      itemCount: _horarios.length,
-      itemBuilder: (context, index) {
-        return ListTile(
-          title: Text(_horarios[index]),
-          },
-        );
-      },
-    )),
+                text: 'TExt 1',
               ),
               Tab(
                 text: 'TEXT 2',
